@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Footer from "./components/Footer/Footer";
-import Home2 from "./pages/Home2";
-import Services from "./pages/Services";
+import HomePizza from "./pages/HomePizza";
+import MenuPizza from "./pages/MenuPizza";
 import Error from "./pages/Error";
 
 import "./App.css";
@@ -17,8 +17,11 @@ function App() {
     <BrowserRouter>
       <HelmetProvider>
         <Routes>
-          <Route path="/:id" element={<Home2 helmet={helmet} />} />
-          <Route path="/:id/pizzas" element={<Services helmet={helmet} />} />
+          <Route path="/pizza/:id" element={<HomePizza helmet={helmet} />} />
+          <Route
+            path="/pizza/:id/menu"
+            element={<MenuPizza helmet={helmet} />}
+          />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

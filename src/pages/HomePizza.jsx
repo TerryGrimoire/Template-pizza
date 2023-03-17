@@ -5,6 +5,9 @@ import papa from "papaparse";
 import Image from "../components/Home/LandingPage/Image";
 import Header from "../components/Header/Header";
 
+import famille from "../assets/famille.jpg";
+import pizza from "../assets/pizza.jpg";
+
 export default function Home() {
   const { id } = useParams();
 
@@ -52,18 +55,20 @@ export default function Home() {
       <section className="articles_container">
         <article>
           <h2>Découvrez notre entreprise</h2>
+          <img src={famille} alt="famille heureuse" />
           <p>
-            Bienvenue chez Planet Pizza, votre destination pour des pizzas
+            {` Bienvenue chez ${id}, votre destination pour des pizzas
             délicieuses à Saint-Denis. Ici, chaque pizza est cuite avec soin et
             amour dans nos fours. Nous sommes fiers d'être une entreprise
             familiale qui offre des pizzas délicieuses à nos clients depuis de
             nombreuses années. Que vous optiez pour une margherita classique,
             une pepperoni épicée, ou quelque chose de plus original, nous avons
-            la pizza parfaite pour vous.
+            la pizza parfaite pour vous.`}
           </p>
         </article>
         <article>
           <h2>Des pizzas de qualité</h2>
+          <img src={pizza} alt="pizza dans un four" />
           <p>
             Nous utilisons les ingrédients les plus frais et conformes aux
             normes halal pour préparer nos pizzas. Tous nos produits sont

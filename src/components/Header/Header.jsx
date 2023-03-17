@@ -6,10 +6,10 @@ function Burger() {
 
   return (
     <header className="flex padding-header justify-between align-center">
-      <Link to={`/${id}`}>
+      <Link to={`/pizza/${id}`}>
         <h3>{id}</h3>
       </Link>
-      <Link to={`/${id}/pizzas`}>
+      <Link to={`/pizza/${id}/menu`}>
         <button className="CTA_home" type="button">
           Nos pizzas
         </button>
