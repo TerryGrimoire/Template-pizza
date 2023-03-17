@@ -1,14 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import { Link, useParams } from "react-router-dom";
 
-function Burger({ helmet }) {
+function Burger() {
+  const { id } = useParams();
+
   return (
     <header className="flex padding-header justify-between align-center">
-      <Link to="/">
-        <img src={logo} alt={`logo de ${helmet.title}`} className="logo" />
+      <Link to={`/${id}`}>
+        <h3>{id}</h3>
       </Link>
-      <Link to="/Services">
+      <Link to={`/${id}/pizzas`}>
         <button className="CTA_home" type="button">
           Nos pizzas
         </button>

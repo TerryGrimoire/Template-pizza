@@ -16,7 +16,7 @@ function Image({ title }) {
   */
 
   const landingData = {
-    h2: "La plus bonne pizza de toute l'île selon nos clients !",
+    h2: "La pizza préférée des réunionnais !",
     alt: "pizzas",
   };
   return (

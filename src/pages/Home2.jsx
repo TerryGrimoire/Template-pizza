@@ -1,9 +1,13 @@
 import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import papa from "papaparse";
 import Image from "../components/Home/LandingPage/Image";
+import Header from "../components/Header/Header";
 
-export default function Home({ helmet }) {
+export default function Home() {
+  const { id } = useParams();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -41,12 +45,10 @@ export default function Home({ helmet }) {
   return (
     <main className="flex-col home">
       <Helmet>
-        <title> {helmet.title} | Accueil </title>
-        <link rel="canonical" href={helmet.href} />
-        <meta name="description" content={helmet.description} />
+        <title> {id} | Accueil </title>
       </Helmet>
-
-      <Image title={helmet.title} />
+      <Header id />
+      <Image title={id} />
       <section className="articles_container">
         <article>
           <h2>Découvrez notre entreprise</h2>
@@ -96,19 +98,17 @@ export default function Home({ helmet }) {
                 href="mailto:test@live.fr
 "
               >
-                {`contact@${helmet.title
-                  .toLowerCase()
-                  .replaceAll(" ", "")}.com`}
+                {`contact@${id.toLowerCase().replaceAll(" ", "")}.com`}
               </a>
             </p>
           </div>
 
           <ul>
-            <li>Lundi : Fermé</li>
-            <li>Mardi : 11h-13h30 | 18h-22h</li>
-            <li>Mercredi : 11h-13h30 | 18h-22h</li>
-            <li>Jeudi : 11h-13h30 | 18h-22h</li>
-            <li>Vendredi : 11h-13h30 | 18h-22h</li>
+            <li>Lundi : 11h-14h | 18h-22h</li>
+            <li>Mardi : 11h-14h | 18h-22h</li>
+            <li>Mercredi : 11h-14h | 18h-22h</li>
+            <li>Jeudi : 11h-14h | 18h-22h</li>
+            <li>Vendredi : 11h-14h00 | 18h-22h</li>
             <li>Samedi : 18h-22h</li>
             <li>Dimanche :18h-22h</li>
           </ul>

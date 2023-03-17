@@ -1,52 +1,9 @@
-import React, { useEffect } from "react";
-import { Helmet } from "react-helmet-async";
-import papa from "papaparse";
-import Image from "../components/Home/LandingPage/Image";
+import React from "react";
 
-export default function Home({ helmet }) {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  const prepareData = (data) => {
-    // j correspond aux lignes de A à ZZZ sur fichier Excel
-    // index
-    // line correspond à
-    // index correspond à
-    // key correspond à
-
-    let obj = {};
-    const json = data.map((line, index) => {
-      if (index > 1) {
-        data[9].forEach((key, j) => {
-          if (line[j] !== "" && line[j] !== "PIZZAS") {
-            obj = { ...obj, [key]: line[j] };
-          }
-        });
-      }
-      return obj;
-    });
-
-    json.shift();
-    sessionStorage.setItem("pizzas", JSON.stringify([...new Set(json)]));
-  };
-
-  useEffect(() => {
-    fetch(import.meta.env.VITE_DATA)
-      .then((result) => result.text())
-      .then((text) => papa.parse(text))
-      .then((data) => prepareData(data.data));
-  }, []);
-
+function HomeComposant() {
   return (
-    <main className="flex-col home">
-      <Helmet>
-        <title> {helmet.title} | Accueil </title>
-        <link rel="canonical" href={helmet.href} />
-        <meta name="description" content={helmet.description} />
-      </Helmet>
-
-      <Image title={helmet.title} />
+    <>
+      <Image title={id} />
       <section className="articles_container">
         <article>
           <h2>Découvrez notre entreprise</h2>
@@ -94,26 +51,26 @@ export default function Home({ helmet }) {
               Email : {"  "}
               <a
                 href="mailto:test@live.fr
-"
+    "
               >
-                {`contact@${helmet.title
-                  .toLowerCase()
-                  .replaceAll(" ", "")}.com`}
+                {`contact@${id.toLowerCase().replaceAll(" ", "")}.com`}
               </a>
             </p>
           </div>
 
           <ul>
-            <li>Lundi : Fermé</li>
-            <li>Mardi : 11h-13h30 | 18h-22h</li>
-            <li>Mercredi : 11h-13h30 | 18h-22h</li>
-            <li>Jeudi : 11h-13h30 | 18h-22h</li>
-            <li>Vendredi : 11h-13h30 | 18h-22h</li>
+            <li>Lundi : 11h-14h | 18h-22h</li>
+            <li>Mardi : 11h-14h | 18h-22h</li>
+            <li>Mercredi : 11h-14h | 18h-22h</li>
+            <li>Jeudi : 11h-14h | 18h-22h</li>
+            <li>Vendredi : 11h-14h00 | 18h-22h</li>
             <li>Samedi : 18h-22h</li>
             <li>Dimanche :18h-22h</li>
           </ul>
         </div>
       </section>
-    </main>
+    </>
   );
 }
+
+export default HomeComposant;

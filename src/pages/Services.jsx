@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import Header from "../components/Header/Header";
 
 import toute from "../assets/toutes.png";
 import sucre from "../assets/sucre.png";
@@ -12,6 +13,7 @@ import news from "../assets/new.png";
 
 function Services({ helmet }) {
   const navigate = useNavigate();
+  const { id } = useParams();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -30,6 +32,7 @@ function Services({ helmet }) {
         <link rel="canonical" href={`${helmet.href}/Services`} />
         <meta name="description" content={helmet.description} />
       </Helmet>
+      <Header id={id} />
       <section>
         <h1>Nos pizzas</h1>
         <div className="button_container">
