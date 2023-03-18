@@ -1,24 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import Select from "react-select";
 
 export default function Home({ helmet }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [id, setId] = useState("");
-  const [type, setType] = useState("");
-
-  const options = [
-    { value: "pizza", label: "pizza" },
-    { value: "barbershop", label: "barbershop" },
-    { value: "coiffeur", label: "coiffeur" },
-  ];
-  const handleOptions = (selectedOptions) => {
-    setType(selectedOptions.value);
-  };
+  const [id, setId] = useState("Grimoire");
+  const [type, setType] = useState("pizza");
 
   return (
     <main className="flex-col simulateur">
@@ -33,7 +23,18 @@ export default function Home({ helmet }) {
           Nom de votre entreprise
           <input type="text" onChange={(e) => setId(e.target.value)} />
         </label>
-        <Select options={options} onChange={handleOptions} />
+        <select
+          name="select"
+          id="select"
+          value={type}
+          onChange={(e) => setType(e.target.value)}
+        >
+          <option value="pizza">pizzeria</option>
+          <option value="coiffeur">Barber Shop</option>
+          <option value="coiffeur2">Salon de coiffure</option>
+          <option value="snack">Snack bar</option>
+          <option value="restaurant">restaurant</option>
+        </select>
         <Link to={`/${type}/${id}`}>
           <button type="button">Voir le résultat</button>
         </Link>
