@@ -121,6 +121,7 @@ li {
 .margin0r1r {
   margin: 0 1rem;
 }
+
 /********************************************************************* NAV *********************************************************************/ 
 
 .openBurger {
@@ -199,6 +200,45 @@ transform: rotate(180deg);
   font-weight: bolder;
   font-size: 1rem;
   color: var(--fourth-color);
+}
+
+/******************************************************************** SIMULATEUR *****************************************************************************/
+.simulateur {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.simulateur * {
+  overflow: hidden;
+}
+
+.simulateur form  * {
+  overflow: visible;
+}
+.simulateur h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin: 2rem;
+  width: fit-content;
+  height: fit-content;
+  padding: 2rem;
+}
+.simulateur form > * {
+  margin: 2rem 0;
+}
+.simulateur form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.simulateur form label {
+  display: flex;
+  flex-direction: column;
 }
 /********************************************************************* HOME *********************************************************************/ 
 .main_container {
