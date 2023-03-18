@@ -23,18 +23,21 @@ export default function Home({ helmet }) {
           Nom de votre entreprise
           <input type="text" onChange={(e) => setId(e.target.value)} />
         </label>
-        <select
-          name="select"
-          id="select"
-          value={type}
-          onChange={(e) => setType(e.target.value)}
-        >
-          <option value="pizza">pizzeria</option>
-          <option value="coiffeur">Barber Shop</option>
-          <option value="coiffeur2">Salon de coiffure</option>
-          <option value="snack">Snack bar</option>
-          <option value="restaurant">restaurant</option>
-        </select>
+        <label htmlFor="select">
+          Votre secteur d'activité
+          <select
+            name="select"
+            id="select"
+            value={type}
+            onChange={(e) => setType(e.target.value)}
+          >
+            <option value="pizza">pizzeria</option>
+            <option value="coiffeur">Barber Shop</option>
+            <option value="coiffeur2">Salon de coiffure</option>
+            <option value="snack">Snack bar</option>
+            <option value="restaurant">restaurant</option>
+          </select>
+        </label>
         <Link to={`/${type}/${id}`}>
           <button type="button">Voir le résultat</button>
         </Link>

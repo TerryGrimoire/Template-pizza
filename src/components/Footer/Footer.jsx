@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import cb from "../../assets/visa.png";
 import cheque from "../../assets/cheque.png";
 import ticket from "../../assets/chequedej.png";
@@ -10,8 +10,12 @@ import zotlivraison from "../../assets/zotlivraison.png";
 import uber from "../../assets/uber.png";
 
 function Footer() {
+  const loc = useLocation().pathname;
+
   return (
-    <footer className="flex-col center padding1 footer ">
+    <footer
+      className={loc === "/" ? "none" : "flex-col center padding1 footer"}
+    >
       <div>
         <h2>Moyens de paiement acceptés</h2>
         <div className="flex">
