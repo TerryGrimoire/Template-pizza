@@ -31,15 +31,15 @@ export default function Home({ helmet }) {
             value={type}
             onChange={(e) => setType(e.target.value)}
           >
-            <option value="pizza">pizzeria</option>
+            <option value="pizza">Pizzeria</option>
             <option value="coiffeur">Barber Shop</option>
             <option value="coiffeur2">Salon de coiffure</option>
-            <option value="snack">Snack bar</option>
-            <option value="restaurant">restaurant</option>
+            <option value="snack">Snack Bar</option>
+            <option value="restaurant">Restaurant</option>
           </select>
         </label>
         <Link to={`/${type}/${id}`}>
-          <button type="button">Voir le résultat</button>
+          <button type="button">SIMULER VOTRE SITE</button>
         </Link>
       </form>
     </main>
