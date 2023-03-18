@@ -71,35 +71,38 @@ export default function Home({ langue }) {
       <Helmet>
         <title> {id} | Accueil </title>
       </Helmet>
-      <Header id langue />
+      <Header id langue type />
       <Image
         title={id}
         subtitle={data.subtitle}
         src={data.background_src}
         alt={data.background_alt}
       />
+      <h1 className="desktop">Qui nous sommes ?</h1>
       <section className="articles_container">
         <article>
-          <h2>{data.h2_1}</h2>
+          <div>
+            <h2>{data.h2_1}</h2>
+            <p>
+              {data.p1}
+              {"  "}
+              {id}
+              {data.p11}
+            </p>
+          </div>
           <img src={data.humain_src} alt={data.humain_alt} />
-          <p>
-            {` Bienvenue chez ${id}, votre destination pour des pizzas savoureuses. Ici, chaque pizza est cuite avec soin et
-            amour dans nos fours. Nous sommes fiers d'être une entreprise
-            familiale qui offre des pizzas délicieuses à nos clients depuis de
-            nombreuses années. Que vous optiez pour une margherita classique,
-            une pepperoni épicée, ou quelque chose de plus original, nous avons
-            la pizza parfaite pour vous.`}
-          </p>
         </article>
         <article>
-          <h2>{data.h2_2}</h2>
+          <div>
+            <h2>{data.h2_2}</h2>
+            <p>
+              Nous utilisons les ingrédients des ingrédients frais, de saison et
+              de qualité pour la préparation de nos pizzas. Nous attachons un
+              soin particulier à la confection de nos recettes et à la
+              satisfaction de vos papilles.
+            </p>
+          </div>
           <img src={data.produit_src} alt={data.produit_alt} />
-          <p>
-            Nous utilisons les ingrédients des ingrédients frais, de saison et
-            de qualité pour la préparation de nos pizzas. Nous attachons un soin
-            particulier à la confection de nos recettes et à la satisfaction de
-            vos papilles.
-          </p>
         </article>
       </section>
       <section>
