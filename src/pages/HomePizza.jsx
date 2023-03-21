@@ -6,10 +6,12 @@ import Image from "../components/Home/LandingPage/Image";
 import Header from "../components/Header/Header";
 import dataImport from "../data/data";
 
-export default function Home({ langue }) {
+import lg from "../assets/langue.png";
+
+export default function Home() {
   const { id, type } = useParams();
   const [num, setNum] = useState(0);
-
+  const [langue, setLangue] = useState(false);
   const id2 = () => {
     switch (type) {
       case "pizza":
@@ -37,7 +39,7 @@ export default function Home({ langue }) {
     id2();
   }, []);
 
-  const data = langue === "fr" ? dataImport[num].fr : dataImport[num].re;
+  const data = langue ? dataImport[num].re : dataImport[num].fr;
 
   const prepareData = (data2) => {
     // j correspond aux lignes de A à ZZZ sur fichier Excel
@@ -71,10 +73,17 @@ export default function Home({ langue }) {
 
   return (
     <main className="flex-col home">
+      <button
+        type="button"
+        onClick={() => setLangue(!langue)}
+        className="button_bottom_homepage"
+      >
+        <img src={lg} alt="planete terre signifiant langue" />
+      </button>
       <Helmet>
         <title> {id} | Accueil </title>
       </Helmet>
-      <Header id langue type />
+      <Header id langue={langue} type />
       <Image
         title={id}
         subtitle={data.subtitle}
@@ -98,21 +107,20 @@ export default function Home({ langue }) {
         <article>
           <div>
             <h2>{data.h2_2}</h2>
-            <p>
-              Nous utilisons les ingrédients des ingrédients frais, de saison et
-              de qualité pour la préparation de nos pizzas. Nous attachons un
-              soin particulier à la confection de nos recettes et à la
-              satisfaction de vos papilles.
-            </p>
+            <p>{data.p2}</p>
           </div>
           <img src={data.produit_src} alt={data.produit_alt} />
         </article>
       </section>
       <section>
         <div className="iframe">
-          <h2>Nous retrouver</h2>
+          <h2>{langue ? "Nous retrouver" : "Artrouv anou"}</h2>
           <div className="locaux">
-            <p>Nous sommes ravis de vous retrouver dans nos locaux.</p>
+            <p>
+              {langue
+                ? "Nous sommes ravis de vous retrouver dans nos locaux."
+                : "Va fé plézir anou artrouv azot dann nout bann lokal."}
+            </p>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1262.0745646142047!2d55.45360514743608!3d-20.8829594607785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21827f06fb2d8581%3A0x24bcf04f3459092f!2s94%20Rue%20Sainte-Marie%2C%20Saint-Denis%2097400%2C%20La%20R%C3%A9union!5e0!3m2!1sfr!2sfr!4v1675499040432!5m2!1sfr!2sfr"
               title="google maps"
@@ -120,7 +128,7 @@ export default function Home({ langue }) {
           </div>
         </div>
         <div>
-          <h2>Nous contacter</h2>
+          <h2>{langue ? "Nous contacter" : "Kontakt anou"}</h2>
           <div>
             <p>
               Téléphone :<a href="tel:+262262 00 00 00"> 02 62 00 00 00</a>

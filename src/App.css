@@ -32,8 +32,12 @@
   box-sizing: border-box;
   background-color: var(--main-bg-color-color);
   font-family: var(--font-text);
-  overflow-x: hidden;
   line-height: 1.8;
+  overflow: visible;
+}
+
+main * {
+  overflow-x: hidden;
 }
 
 h1 {
@@ -265,6 +269,27 @@ transform: rotate(180deg);
   font-weight: bold;
 }
 /********************************************************************* HOME *********************************************************************/ 
+
+.button_bottom_homepage {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: brown;
+  border: none;
+  border-radius: 30%;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button_bottom_homepage img {
+  height: 2rem;
+  width: 2rem;
+}
+
 .main_container {
   padding: 1rem 3rem;
 }
@@ -397,6 +422,10 @@ ul {
   object-fit: cover;
   margin-top: 2rem;
 
+}
+main.home {
+  position: relative;
+  overflow: initial;
 }
 /********************************************************************* FOOTER *********************************************************************/ 
 

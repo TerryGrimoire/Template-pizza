@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 
-function Burger() {
-  const { id, type, langue } = useParams();
+function Burger({ langue }) {
+  const { id, type } = useParams();
 
   return (
     <header className="flex padding-header justify-between align-center">
@@ -11,7 +11,7 @@ function Burger() {
       </Link>
       <Link to={`/${type}/${id}/menu`}>
         <button className="CTA_home" type="button">
-          {langue === "fr" ? "Nos Tarifs" : "Nout tarif"}
+          {!langue ? "Nos Tarifs" : "Nout tarif"}
         </button>
       </Link>
     </header>
