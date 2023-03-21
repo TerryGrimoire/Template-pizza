@@ -15,14 +15,17 @@ export default function Home({ langue }) {
       case "pizza":
         setNum(0);
         break;
-      case "coiffeur":
+      case "barber":
         setNum(1);
         break;
-      case "snack":
+      case "coiffeur":
         setNum(2);
         break;
       case "restaurant":
         setNum(3);
+        break;
+      case "snack":
+        setNum(4);
         break;
       default:
         setNum(0);

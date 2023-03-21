@@ -32,8 +32,8 @@ export default function Home({ helmet }) {
             onChange={(e) => setType(e.target.value)}
           >
             <option value="pizza">Pizzeria</option>
-            <option value="coiffeur">Barber Shop</option>
-            <option value="coiffeur2">Salon de coiffure</option>
+            <option value="barber">Barber Shop</option>
+            <option value="coiffeur">Salon de coiffure</option>
             <option value="snack">Snack Bar</option>
             <option value="restaurant">Restaurant</option>
           </select>
