@@ -651,6 +651,12 @@ ul {
 .nouveau div small {
   margin: 0.25rem 0;
 }
+
+.prix {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
 /******************************************************************************************************************************************/ 
 /********************************************************************* DESKTIOP *********************************************************************/ 
 /******************************************************************************************************************************************/ 
@@ -673,11 +679,17 @@ ul {
 /********************************************************************* NAVBAR *********************************************************************/ 
 .navbar {
   padding: 2rem 0;
+  color: var(--secondary-bg-color);
 
 }
 
 .navbar * {
   padding: 0rem 2rem;
+  color: var(--secondary-bg-color);
+}
+
+.navbar button {
+  color: #000000;
 }
 .background_img {
   position: absolute;
@@ -842,6 +854,11 @@ box-shadow: var(--box-shadow);
   width: 100%;
   text-align: center;
   margin-bottom: 3rem;
+  font-size: 5rem;
+}
+
+.menu {
+  padding-bottom: 3rem;
 }
 
 .menu .button_container {
@@ -870,7 +887,6 @@ box-shadow: var(--box-shadow);
   border-radius: 0.35rem;
   font-weight: bolder;
   font-size: 1rem;
-  color: var(--fourth-color);
   width: fit-content;
   height: fit-content;
 }
@@ -966,6 +982,12 @@ box-shadow: var(--box-shadow);
   align-items: flex-end;
   width: 30%;
   padding: 0.25rem 0 0;
+}
+
+.prix {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 20vw;
 }
 /********************************************************************* FOOTER *********************************************************************/ 
 

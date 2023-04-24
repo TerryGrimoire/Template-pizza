@@ -114,10 +114,10 @@ export default function Home() {
       </section>
       <section>
         <div className="iframe">
-          <h2>{langue ? "Nous retrouver" : "Artrouv anou"}</h2>
+          <h2>{!langue ? "Nous retrouver" : "Artrouv anou"}</h2>
           <div className="locaux">
             <p>
-              {langue
+              {!langue
                 ? "Nous sommes ravis de vous retrouver dans nos locaux."
                 : "Va fé plézir anou artrouv azot dann nout bann lokal."}
             </p>
@@ -128,7 +128,7 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <h2>{langue ? "Nous contacter" : "Kontakt anou"}</h2>
+          <h2>{!langue ? "Nous contacter" : "Kontakt anou"}</h2>
           <div>
             <p>
               Téléphone :<a href="tel:+262262 00 00 00"> 02 62 00 00 00</a>
